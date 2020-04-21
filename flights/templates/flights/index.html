@@ -1,0 +1,19 @@
+{% extends "flights/base.html" %}
+
+{% block title %}
+Welcome to Booking Flight!
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block body %}
+    <h1>Hello there, this is our list of available flights:</h1>
+    <ul>
+        {% for flight in flights %}
+            <li><a href="{% url 'flight' flight.id %}">{{ flight }}</a></li>
+        {% empty %}
+            <h3>No available flights</h3>
+        {% endfor %}
+    </ul>
+{% endblock %}
